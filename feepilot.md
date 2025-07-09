@@ -132,18 +132,20 @@ POST /admin/tracking
 
 ## Error from developers tools i am seeing ## 
 ==> Cloning from https://github.com/mulusewy/feepilot
-==> Checking out commit 17cb50483d2ce6c32ef30c853d6834af57d0da16 in branch main
+==> Checking out commit 314627fef11847c17c6c093cb3278481b96032b0 in branch main
 ==> Using Node.js version 22.16.0 (default)
 ==> Docs on specifying a Node.js version: https://render.com/docs/node-version
 ==> Using Bun version 1.1.0 (default)
 ==> Docs on specifying a Bun version: https://render.com/docs/bun-version
 ==> Running build command 'npm install; npm run build'...
-added 434 packages, and audited 435 packages in 5s
-105 packages are looking for funding
+added 395 packages, and audited 396 packages in 5s
+91 packages are looking for funding
   run `npm fund` for details
-3 low severity vulnerabilities
-To address all issues, run:
+4 low severity vulnerabilities
+To address issues that do not require attention, run:
   npm audit fix
+To address all issues (including breaking changes), run:
+  npm audit fix --force
 Run `npm audit` for details.
 > cmsassstarter@0.0.1 build
 > vite build
@@ -153,36 +155,14 @@ Run `npm audit` for details.
         ╵              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 vite v6.3.5 building SSR bundle for production...
 transforming...
-/*! 🌼 daisyUI 5.0.0 */
-✓ 261 modules transformed.
-✗ Build failed in 1.84s
+✓ 30 modules transformed.
+✗ Build failed in 363ms
 error during build:
-src/routes/(admin)/account/subscription_helpers.server.ts (4:9): "PRIVATE_STRIPE_API_KEY" is not exported by "virtual:env/static/private", imported by "src/routes/(admin)/account/subscription_helpers.server.ts".
-file: /opt/render/project/src/src/routes/(admin)/account/subscription_helpers.server.ts:4:9
-2: import type { Database } from "../../../DatabaseDefinitions"
-3: 
-4: import { PRIVATE_STRIPE_API_KEY } from "$env/static/private"
-            ^
-5: import Stripe from "stripe"
-6: import { pricingPlans } from "../../(marketing)/pricing/pricing_plans"
+Could not resolve "../../../../(marketing)/pricing/pricing_plans" from "src/routes/(admin)/account/(menu)/billing/+page.svelte"
+file: /opt/render/project/src/src/routes/(admin)/account/(menu)/billing/+page.svelte
     at getRollupError (file:///opt/render/project/src/node_modules/rollup/dist/es/shared/parseAst.js:397:41)
     at error (file:///opt/render/project/src/node_modules/rollup/dist/es/shared/parseAst.js:393:42)
-    at Module.error (file:///opt/render/project/src/node_modules/rollup/dist/es/shared/node-entry.js:16603:16)
-    at Module.traceVariable (file:///opt/render/project/src/node_modules/rollup/dist/es/shared/node-entry.js:17052:29)
-    at ModuleScope.findVariable (file:///opt/render/project/src/node_modules/rollup/dist/es/shared/node-entry.js:14709:39)
-    at Identifier.bind (file:///opt/render/project/src/node_modules/rollup/dist/es/shared/node-entry.js:5356:40)
-    at NewExpression.bind (file:///opt/render/project/src/node_modules/rollup/dist/es/shared/node-entry.js:2779:28)
-    at VariableDeclarator.bind (file:///opt/render/project/src/node_modules/rollup/dist/es/shared/node-entry.js:2783:23)
-    at VariableDeclaration.bind (file:///opt/render/project/src/node_modules/rollup/dist/es/shared/node-entry.js:2779:28)
-    at Program.bind (file:///opt/render/project/src/node_modules/rollup/dist/es/shared/node-entry.js:2779:28)
-    at Module.bindReferences (file:///opt/render/project/src/node_modules/rollup/dist/es/shared/node-entry.js:16582:18)
-    at Graph.sortModules (file:///opt/render/project/src/node_modules/rollup/dist/es/shared/node-entry.js:22130:20)
-    at Graph.build (file:///opt/render/project/src/node_modules/rollup/dist/es/shared/node-entry.js:22028:14)
-    at async file:///opt/render/project/src/node_modules/rollup/dist/es/shared/node-entry.js:22721:13
-    at async catchUnfinishedHookActions (file:///opt/render/project/src/node_modules/rollup/dist/es/shared/node-entry.js:22187:16)
-    at async rollupInternal (file:///opt/render/project/src/node_modules/rollup/dist/es/shared/node-entry.js:22716:5)
-    at async buildEnvironment (file:///opt/render/project/src/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:46206:14)
-    at async Object.defaultBuildApp [as buildApp] (file:///opt/render/project/src/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:46684:5)
-    at async CAC.<anonymous> (file:///opt/render/project/src/node_modules/vite/dist/node/cli.js:863:7)
+    at ModuleLoader.handleInvalidResolvedId (file:///opt/render/project/src/node_modules/rollup/dist/es/shared/node-entry.js:21111:24)
+    at file:///opt/render/project/src/node_modules/rollup/dist/es/shared/node-entry.js:21071:26
 ==> Build failed 😞
 ==> Common ways to troubleshoot your deploy: https://render.com/docs/troubleshooting-deploys
