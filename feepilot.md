@@ -131,71 +131,58 @@ POST /admin/tracking
 
 
 ## Error from developers tools i am seeing ## 
-PS C:\Windows\system32> cd C:\Users\Yemane\Desktop\feepilot_2.0\backend
-PS C:\Users\Yemane\Desktop\feepilot_2.0\backend>  uvicorn main:app --reload
-←[32mINFO←[0m:     Will watch for changes in these directories: ['C:\\Users\\Yemane\\Desktop\\feepilot_2.0\\backend']
-←[32mINFO←[0m:     Uvicorn running on ←[1mhttp://127.0.0.1:8000←[0m (Press CTRL+C to quit)
-←[32mINFO←[0m:     Started reloader process [←[36m←[1m15312←[0m] using ←[36m←[1mStatReload←[0m
-Process SpawnProcess-1:
-Traceback (most recent call last):
-  File "C:\Users\Yemane\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\process.py", line 313, in _bootstrap
-    self.run()
-    ~~~~~~~~^^
-  File "C:\Users\Yemane\AppData\Local\Programs\Python\Python313\Lib\multiprocessing\process.py", line 108, in run
-    self._target(*self._args, **self._kwargs)
-    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Yemane\AppData\Local\Programs\Python\Python313\Lib\site-packages\uvicorn\_subprocess.py", line 80, in subprocess_started
-    target(sockets=sockets)
-    ~~~~~~^^^^^^^^^^^^^^^^^
-  File "C:\Users\Yemane\AppData\Local\Programs\Python\Python313\Lib\site-packages\uvicorn\server.py", line 67, in run
-    return asyncio.run(self.serve(sockets=sockets))
-           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Yemane\AppData\Local\Programs\Python\Python313\Lib\asyncio\runners.py", line 195, in run
-    return runner.run(main)
-           ~~~~~~~~~~^^^^^^
-  File "C:\Users\Yemane\AppData\Local\Programs\Python\Python313\Lib\asyncio\runners.py", line 118, in run
-    return self._loop.run_until_complete(task)
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
-  File "C:\Users\Yemane\AppData\Local\Programs\Python\Python313\Lib\asyncio\base_events.py", line 725, in run_until_complete
-    return future.result()
-           ~~~~~~~~~~~~~^^
-  File "C:\Users\Yemane\AppData\Local\Programs\Python\Python313\Lib\site-packages\uvicorn\server.py", line 71, in serve
-    await self._serve(sockets)
-  File "C:\Users\Yemane\AppData\Local\Programs\Python\Python313\Lib\site-packages\uvicorn\server.py", line 78, in _serve
-    config.load()
-    ~~~~~~~~~~~^^
-  File "C:\Users\Yemane\AppData\Local\Programs\Python\Python313\Lib\site-packages\uvicorn\config.py", line 436, in load
-    self.loaded_app = import_from_string(self.app)
-                      ~~~~~~~~~~~~~~~~~~^^^^^^^^^^
-  File "C:\Users\Yemane\AppData\Local\Programs\Python\Python313\Lib\site-packages\uvicorn\importer.py", line 19, in import_from_string
-    module = importlib.import_module(module_str)
-  File "C:\Users\Yemane\AppData\Local\Programs\Python\Python313\Lib\importlib\__init__.py", line 88, in import_module
-    return _bootstrap._gcd_import(name[level:], package, level)
-           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
-  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
-  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
-  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
-  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
-  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
-  File "C:\Users\Yemane\Desktop\feepilot_2.0\backend\main.py", line 48, in <module>
-    "hashed_password": pwd_context.hash("adminpass") # TODO: Change this in production
-                       ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "C:\Users\Yemane\AppData\Local\Programs\Python\Python313\Lib\site-packages\passlib\context.py", line 2258, in hash
-    return record.hash(secret, **kwds)
-           ~~~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "C:\Users\Yemane\AppData\Local\Programs\Python\Python313\Lib\site-packages\passlib\utils\handlers.py", line 779, in hash
-    self.checksum = self._calc_checksum(secret)
-                    ~~~~~~~~~~~~~~~~~~~^^^^^^^^
-  File "C:\Users\Yemane\AppData\Local\Programs\Python\Python313\Lib\site-packages\passlib\handlers\bcrypt.py", line 591, in _calc_checksum
-    self._stub_requires_backend()
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
-  File "C:\Users\Yemane\AppData\Local\Programs\Python\Python313\Lib\site-packages\passlib\utils\handlers.py", line 2254, in _stub_requires_backend
-    cls.set_backend()
-    ~~~~~~~~~~~~~~~^^
-  File "C:\Users\Yemane\AppData\Local\Programs\Python\Python313\Lib\site-packages\passlib\utils\handlers.py", line 2156, in set_backend
-    return owner.set_backend(name, dryrun=dryrun)
-           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
-  File "C:\Users\Yemane\AppData\Local\Programs\Python\Python313\Lib\site-packages\passlib\utils\handlers.py", line 2176, in set_backend
-    raise default_error
-passlib.exc.MissingBackendError: bcrypt: no backends available -- recommend you install one (e.g. 'pip install bcrypt')
+==> Cloning from https://github.com/mulusewy/feepilot
+==> Checking out commit 17cb50483d2ce6c32ef30c853d6834af57d0da16 in branch main
+==> Using Node.js version 22.16.0 (default)
+==> Docs on specifying a Node.js version: https://render.com/docs/node-version
+==> Using Bun version 1.1.0 (default)
+==> Docs on specifying a Bun version: https://render.com/docs/bun-version
+==> Running build command 'npm install; npm run build'...
+added 434 packages, and audited 435 packages in 5s
+105 packages are looking for funding
+  run `npm fund` for details
+3 low severity vulnerabilities
+To address all issues, run:
+  npm audit fix
+Run `npm audit` for details.
+> cmsassstarter@0.0.1 build
+> vite build
+▲ [WARNING] Cannot find base config file "./.svelte-kit/tsconfig.json" [tsconfig.json]
+    tsconfig.json:2:13:
+      2 │   "extends": "./.svelte-kit/tsconfig.json",
+        ╵              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+vite v6.3.5 building SSR bundle for production...
+transforming...
+/*! 🌼 daisyUI 5.0.0 */
+✓ 261 modules transformed.
+✗ Build failed in 1.84s
+error during build:
+src/routes/(admin)/account/subscription_helpers.server.ts (4:9): "PRIVATE_STRIPE_API_KEY" is not exported by "virtual:env/static/private", imported by "src/routes/(admin)/account/subscription_helpers.server.ts".
+file: /opt/render/project/src/src/routes/(admin)/account/subscription_helpers.server.ts:4:9
+2: import type { Database } from "../../../DatabaseDefinitions"
+3: 
+4: import { PRIVATE_STRIPE_API_KEY } from "$env/static/private"
+            ^
+5: import Stripe from "stripe"
+6: import { pricingPlans } from "../../(marketing)/pricing/pricing_plans"
+    at getRollupError (file:///opt/render/project/src/node_modules/rollup/dist/es/shared/parseAst.js:397:41)
+    at error (file:///opt/render/project/src/node_modules/rollup/dist/es/shared/parseAst.js:393:42)
+    at Module.error (file:///opt/render/project/src/node_modules/rollup/dist/es/shared/node-entry.js:16603:16)
+    at Module.traceVariable (file:///opt/render/project/src/node_modules/rollup/dist/es/shared/node-entry.js:17052:29)
+    at ModuleScope.findVariable (file:///opt/render/project/src/node_modules/rollup/dist/es/shared/node-entry.js:14709:39)
+    at Identifier.bind (file:///opt/render/project/src/node_modules/rollup/dist/es/shared/node-entry.js:5356:40)
+    at NewExpression.bind (file:///opt/render/project/src/node_modules/rollup/dist/es/shared/node-entry.js:2779:28)
+    at VariableDeclarator.bind (file:///opt/render/project/src/node_modules/rollup/dist/es/shared/node-entry.js:2783:23)
+    at VariableDeclaration.bind (file:///opt/render/project/src/node_modules/rollup/dist/es/shared/node-entry.js:2779:28)
+    at Program.bind (file:///opt/render/project/src/node_modules/rollup/dist/es/shared/node-entry.js:2779:28)
+    at Module.bindReferences (file:///opt/render/project/src/node_modules/rollup/dist/es/shared/node-entry.js:16582:18)
+    at Graph.sortModules (file:///opt/render/project/src/node_modules/rollup/dist/es/shared/node-entry.js:22130:20)
+    at Graph.build (file:///opt/render/project/src/node_modules/rollup/dist/es/shared/node-entry.js:22028:14)
+    at async file:///opt/render/project/src/node_modules/rollup/dist/es/shared/node-entry.js:22721:13
+    at async catchUnfinishedHookActions (file:///opt/render/project/src/node_modules/rollup/dist/es/shared/node-entry.js:22187:16)
+    at async rollupInternal (file:///opt/render/project/src/node_modules/rollup/dist/es/shared/node-entry.js:22716:5)
+    at async buildEnvironment (file:///opt/render/project/src/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:46206:14)
+    at async Object.defaultBuildApp [as buildApp] (file:///opt/render/project/src/node_modules/vite/dist/node/chunks/dep-DBxKXgDP.js:46684:5)
+    at async CAC.<anonymous> (file:///opt/render/project/src/node_modules/vite/dist/node/cli.js:863:7)
+==> Build failed 😞
+==> Common ways to troubleshoot your deploy: https://render.com/docs/troubleshooting-deploys
