@@ -235,63 +235,39 @@
       <div
         class="text-xl md:text-3xl font-bold bg-clip-text text-transparent bg-linear-to-r from-primary to-accent mb-3 md:mb-7 pb-1"
       >
-        SaaS Starter Demo
+        FeePilot: Your Ultimate PSP Fee Simulator
       </div>
 
       <div
         class="text-4xl md:text-6xl font-bold px-2"
         style="line-height: 1.2;"
       >
-        The
+        Compare Transaction Fees Across
         <span
           class="underline decoration-secondary decoration-4 md:decoration-[6px]"
-          >open source</span
+          >Stripe</span
         >,
         <span
           class="underline decoration-secondary decoration-4 md:decoration-[6px]"
-          >fast</span
+          >PayPal</span
+        >,
+        <span
+          class="underline decoration-secondary decoration-4 md:decoration-[6px]"
+          >Square</span
         >, and
         <span
           class="underline decoration-secondary decoration-4 md:decoration-[6px]"
-          >free to host</span
+          >Wise</span
         >
-        <span> SaaS template</span>
       </div>
       <div class="mt-6 md:mt-10 text-sm md:text-lg">
-        Built with <a
-          href="https://kit.svelte.dev"
-          class="link font-bold"
-          target="_blank">SvelteKit</a
-        >,
-        <a href="https://supabase.com" class="link font-bold" target="_blank"
-          >Supabase</a
-        >,
-        <a href="https://stripe.com" class="link font-bold" target="_blank"
-          >Stripe</a
-        >,
-        <a href="https://tailwindcss.com" class="link font-bold" target="_blank"
-          >Tailwind</a
-        >,
-        <a href="https://daisyui.com" class="link font-bold" target="_blank"
-          >DaisyUI</a
-        >, and
-        <a
-          href="https://www.postgresql.org"
-          class="link font-bold"
-          target="_blank">Postgres</a
-        >
+        Quickly determine which Payment Service Provider yields the highest net revenue for your online business.
       </div>
       <div
         class="mt-6 md:mt-4 flex flex-row flex-wrap gap-4 place-content-center"
       >
-        <a href="https://github.com/CriticalMoments/CMSaasStarter">
-          <button class="btn btn-primary px-6">★ us on Github</button>
-        </a>
-        <a
-          href="https://github.com/CriticalMoments/CMSaasStarter/tree/main#saas-starter"
-        >
-          <button class="btn btn-outline btn-primary px-6">Read the Docs</button
-          >
+        <a href="/simulate">
+          <button class="btn btn-primary px-6">Start Simulation</button>
         </a>
       </div>
     </div>
@@ -303,58 +279,116 @@
       <div
         class="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-linear-to-r from-primary to-accent pb-2"
       >
-        Explore the Features
+        Key Features of FeePilot
       </div>
       <div class="mt-4 text-xl font-bold">
-        And try them on this
-        <span
-          class="underline decoration-secondary decoration-[3px] md:decoration-[4px]"
-        >
-          fully functional demo
-        </span>
+        Understand every cost and maximize your net revenue.
       </div>
     </div>
 
     <div
       class="flex gap-6 mt-12 max-w-[1064px] mx-auto place-content-center flex-wrap"
     >
-      {#each features as feature}
-        <div class="card bg-white w-[270px] min-h-[300px] flex-none shadow-xl">
-          <div class="card-body items-center text-center p-[24px] pt-[32px]">
-            <div>
-              <svg
-                width="50px"
-                height="50px"
-                class="mb-2 mt-1"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <!-- eslint-disable-next-line svelte/no-at-html-tags -->
-                {@html feature.svgContent}
-              </svg>
-            </div>
-            <h2 class="card-title">
-              {feature.name}
-            </h2>
-            <p class="text-sm">
-              {feature.description}
-            </p>
-            {#if feature.link}
-              <a
-                href={feature.link}
-                class="pb-4"
-                target={feature.newPage ? "_blank" : ""}
-              >
-                <button
-                  class="btn btn-xs btn-outline rounded-full btn-primary min-w-[100px]"
-                  >{feature.linkText ? feature.linkText : "Try It"}</button
-                >
-              </a>
-            {/if}
+      <div class="card bg-white w-[270px] min-h-[300px] flex-none shadow-xl">
+        <div class="card-body items-center text-center p-[24px] pt-[32px]">
+          <div>
+            <svg
+              width="50px"
+              height="50px"
+              class="mb-2 mt-1"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2Z" stroke="#1C274C" stroke-width="1.5"/>
+              <path d="M12 6V12L16 14" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
           </div>
+          <h2 class="card-title">
+            Real-time FX Rates
+          </h2>
+          <p class="text-sm">
+            Get up-to-the-minute exchange rates from Wise API for accurate cross-border transaction cost analysis.
+          </p>
         </div>
-      {/each}
+      </div>
+
+      <div class="card bg-white w-[270px] min-h-[300px] flex-none shadow-xl">
+        <div class="card-body items-center text-center p-[24px] pt-[32px]">
+          <div>
+            <svg
+              width="50px"
+              height="50px"
+              class="mb-2 mt-1"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M3 10C3 6.22876 3 4.34315 4.17157 3.17157C5.34315 2 7.22876 2 11 2H13C16.7712 2 18.6569 2 19.8284 3.17157C21 4.34315 21 6.22876 21 10V14C21 17.7712 21 19.6569 19.8284 20.8284C18.6569 22 16.7712 22 13 22H11C7.22876 22 5.34315 22 4.17157 20.8284C3 19.6569 3 17.7712 3 14V10Z" stroke="#1C274C" stroke-width="1.5"/>
+              <path d="M6 12C6 10.5858 6 9.87868 6.43934 9.43934C6.87868 9 7.58579 9 9 9H15C16.4142 9 17.1213 9 17.5607 9.43934C18 9.87868 18 10.5858 18 12V16C18 17.4142 18 18.1213 17.5607 18.5607C17.1213 19 16.4142 19 15 19H9C7.58579 19 6.87868 19 6.43934 18.5607C6 18.1213 6 17.4142 6 16V12Z" stroke="#1C274C" stroke-width="1.5"/>
+              <path d="M7 6H12" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h2 class="card-title">
+            Detailed Fee Breakdown
+          </h2>
+          <p class="text-sm">
+            See a clear breakdown of fixed fees, variable fees, and hidden surcharges for each PSP.
+          </p>
+        </div>
+      </div>
+
+      <div class="card bg-white w-[270px] min-h-[300px] flex-none shadow-xl">
+        <div class="card-body items-center text-center p-[24px] pt-[32px]">
+          <div>
+            <svg
+              width="50px"
+              height="50px"
+              class="mb-2 mt-1"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M12 6V18" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M15 9.5C15 8.11929 13.6569 7 12 7C10.3431 7 9 8.11929 9 9.5C9 10.8807 10.3431 12 12 12C13.6569 12 15 13.1193 15 14.5C15 15.8807 13.6569 17 12 17C10.3431 17 9 15.8807 9 14.5" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M7 3.33782C8.47087 2.48697 10.1786 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 10.1786 2.48697 8.47087 3.33782 7" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h2 class="card-title">
+            Cross-border Surcharge Analysis
+          </h2>
+          <p class="text-sm">
+            Identify and compare additional costs for international transactions and weekend processing.
+          </p>
+        </div>
+      </div>
+
+      <div class="card bg-white w-[270px] min-h-[300px] flex-none shadow-xl">
+        <div class="card-body items-center text-center p-[24px] pt-[32px]">
+          <div>
+            <svg
+              width="50px"
+              height="50px"
+              class="mb-2 mt-1"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M2 12C2 8.22876 2 6.34315 3.17157 5.17157C4.34315 4 6.22876 4 10 4H14C17.7712 4 19.6569 4 20.8284 5.17157C22 6.34315 22 8.22876 22 12C22 15.7712 22 17.6569 20.8284 18.8284C19.6569 20 17.7712 20 14 20H10C6.22876 20 4.34315 20 3.17157 18.8284C2 17.6569 2 15.7712 2 12Z" stroke="#1C274C" stroke-width="1.5"/>
+              <path d="M10 16.5H6" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M8 13.5H6" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M2 10L22 10" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M14 15C14 14.0572 14 13.5858 14.2929 13.2929C14.5858 13 15.0572 13 16 13C16.9428 13 17.4142 13 17.7071 13.2929C18 13.5858 18 14.0572 18 15C18 15.9428 18 16.4142 17.7071 16.7071C17.4142 17 16.9428 17 16 17C15.0572 17 14.5858 17 14.2929 16.7071C14 16.4142 14 15.9428 14 15Z" stroke="#1C274C" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <h2 class="card-title">
+            Net Revenue Comparison
+          </h2>
+          <p class="text-sm">
+            Quickly compare the final net revenue for each PSP to make informed decisions.
+          </p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -364,68 +398,60 @@
       <div
         class="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-linear-to-r from-primary to-accent mt-4 pb-2"
       >
-        See it in Action
+        How FeePilot Works
       </div>
       <div
         class="flex flex-col lg:flex-row mt-6 gap-6 place-content-center content-center"
       >
-        <div class="hidden md:block">
-          <a href="https://criticalmoments.io" target="_blank" class="link">
-            <div class="mockup-browser border">
-              <div class="mockup-browser-toolbar">
-                <div class="input" style="background:#eee;">
-                  https://criticalmoments.io
-                </div>
-              </div>
-              <div class="flex justify-center">
-                <img
-                  alt="Screenshot of criticalmoments.io homepage"
-                  class="aspect-2044/1242"
-                  src="/images/example-home.png"
-                />
-              </div>
-            </div>
-          </a>
-        </div>
-        <div class="md:hidden">
-          <a href="https://criticalmoments.io" target="_blank" class="link">
-            <div class="card shadow-xl border overflow-hidden">
-              <img
-                alt="Screenshot of criticalmoments.io homepage"
-                class="aspect-2044/1242"
-                src="/images/example-home.png"
-              />
-            </div></a
-          >
-        </div>
         <div class="min-w-[270px] lg:min-w-[420px] flex mt-6 lg:mt-0">
           <div class="my-auto">
             <div class="px-4 text-lg md:text-xl">
-              <a href="https://criticalmoments.io" class="" target="_blank"
-                >SaaS Starter was created by <span
-                  class="font-bold whitespace-nowrap">Critical Moments</span
-                >: a SDK to to help mobile apps
-                <span class="underline decoration-secondary decoration-[3px]"
-                  >increase conversion rates and app-ratings.</span
-                ></a
-              >
+              FeePilot simplifies the complex world of payment processing fees. Just enter your transaction details, and we'll provide a clear, side-by-side comparison of major PSPs.
             </div>
             <div class="px-4 mt-6 text-lg md:text-xl">
-              Our <a
-                href="https://criticalmoments.io"
-                class="link font-bold"
-                target="_blank">webpage</a
-              > is the best example of SaaS Starter with style and real content.
+              Our goal is to empower online merchants to make data-driven decisions, ensuring you always choose the most cost-effective payment solution.
             </div>
             <div class="mt-4 text-large">
-              <a href="https://criticalmoments.io" target="_blank">
+              <a href="/simulate">
                 <button class="btn btn-primary btn-wide mt-3"
-                  >See it in Action</button
+                  >Start Your Simulation</button
                 >
               </a>
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="min-h-[30vh] mt-12">
+  <div class="pt-8 pb-16 px-7">
+    <div class="max-w-lg mx-auto text-center">
+      <div
+        class="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-linear-to-r from-primary to-accent pb-2"
+      >
+        Supported Payment Service Providers
+      </div>
+      <div class="mt-4 text-xl font-bold">
+        We support the most popular PSPs to give you comprehensive insights.
+      </div>
+    </div>
+
+    <div
+      class="flex gap-6 mt-12 max-w-[1064px] mx-auto place-content-center flex-wrap"
+    >
+      <div class="w-32 h-32 flex items-center justify-center">
+        <span class="max-w-full max-h-full">Stripe Logo</span>
+      </div>
+      <div class="w-32 h-32 flex items-center justify-center">
+        <span class="max-w-full max-h-full">PayPal Logo</span>
+      </div>
+      <div class="w-32 h-32 flex items-center justify-center">
+        <span class="max-w-full max-h-full">Square Logo</span>
+      </div>
+      <div class="w-32 h-32 flex items-center justify-center">
+        <span class="max-w-full max-h-full">Wise Logo</span>
       </div>
     </div>
   </div>
