@@ -1,6 +1,6 @@
 fastapi
 uvicorn
-pydantic
+pydantic[email]
 requests
 python-jose
 passlib
